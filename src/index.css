@@ -1,0 +1,146 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding-bottom: 20px;
+  width: 100%;
+  background: white;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.container1 {
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  color: rgb(100, 169, 222);
+  margin-bottom: 30px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Table styles */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.table th, .table td {
+  border-bottom: 1px solid lightgrey;
+  padding: 20px;
+  text-align: center;
+}
+
+.table th {
+  background-color: #f6f6f6;
+  color: #666;
+}
+.table tr:hover {
+  background-color: #e2e9f2;
+}
+
+
+/* Pagination styles */
+.paginator {
+  display: flex;
+  justify-content: center;
+  border: 1px solid #beb6b6;
+  border-radius: 8px;
+  width: 38%;
+  margin: auto;
+}
+.paginator-btn:hover {
+  background: #e2e9f2;
+}
+.paginator-btn {
+  font-size: 14px;
+  background: white;
+  padding: 8px 18px;
+  border: none;
+  cursor: pointer;
+}
+
+.paginator-btn.active {
+  border: 1px solid black;
+  background: white;
+}
+
+.paginator-btn:disabled {
+  cursor: not-allowed;
+  background: white;
+}
+
+
+
+.spinner {
+	--t: 2500ms;
+	--animation: rotate var(--t) linear infinite;
+	--animation2: scale var(--t) linear infinite alternate;
+	position: relative;
+	width: 10rem;
+	height: 10rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	animation: var(--animation), var(--animation2);
+}
+
+.spinner::before,
+.spinner::after {
+	content: '';
+	position: absolute;
+}
+
+.spinner::before {
+	inset: 0;
+	border: 3px solid turquoise;
+	border-radius: 50%;
+	mask-image: conic-gradient(transparent 10%, black);
+	animation: borderScale var(--t) linear infinite alternate;
+}
+
+.spinner::after {
+	--r: 45deg;
+	--scale: 2;
+	width: 20%;
+	height: 20%;
+	background: 
+		radial-gradient(circle at 30% 35%, white 3px, transparent 0),
+		radial-gradient(circle at 70% 35%, white 3px, transparent 0),
+		radial-gradient(circle at top center, white 6px, transparent 0),
+		turquoise;
+	background-position: 0 0, 0 0, 0 1.25rem;
+	top: 0;
+	translate: 0 -50%;
+	rotate: 45deg;
+	animation: var(--animation) reverse, var(--animation2);
+	border-radius: 20%;
+}
+
+@keyframes rotate {
+	to {
+		rotate: calc(360deg + var(--r, 0deg));
+	}
+}
+
+@keyframes scale {
+	to {
+		scale: var(--scale, 0.5);
+	}
+}
+
+@keyframes borderScale {
+	to {
+		border: 6px solid turquoise;
+	}
+}
