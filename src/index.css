@@ -12,7 +12,6 @@ body {
 }
 
 .container1 {
-  height: 60vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -144,3 +143,20 @@ h1 {
 		border: 6px solid turquoise;
 	}
 }
+
+@media (min-width: 350px) and (max-width: 600px) {
+	.paginator {
+	  width: 84%;
+	}
+	.paginator-btn {
+		padding: 8px 6px;
+	  }
+  }
+  @media (min-width: 600px) and (max-width: 1250px) {
+	.paginator {
+	  width: 60%;
+	}
+	.paginator-btn {
+		padding: 8px 10px;
+	  }
+  }  
